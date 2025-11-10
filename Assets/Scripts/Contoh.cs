@@ -8,11 +8,11 @@ public class Contoh : MonoBehaviour
     void Start()
     {
         
-        int Temp;
+        int temp;
 
-        Temp = Number1;
+        temp = Number1;
         Number1 = Number2;
-        Number2 = Temp;
+        Number2 = temp;
 
         Debug.Log("Number1 = "+Number1);
         Debug.Log("Number2 = "+Number2);
