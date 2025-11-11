@@ -1,3 +1,4 @@
+using NUnit.Framework.Interfaces;
 using UnityEngine;
 
 public class Loope : MonoBehaviour
@@ -20,11 +21,29 @@ public class Loope : MonoBehaviour
         {
             Debug.Log("Pengulangan ke-" + i);
         }
+
+        //Challange Faktorial
+        Debug.Log("Hasil Faktorial " + Faktorial(3));
+    
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public int Faktorial(int angka)
+    {
+        int result =1;
+
+        for (int i = angka; i > 0; i--)
+        {
+            result = result * i;
+        }
+
+        return result;
+
     }
 }
