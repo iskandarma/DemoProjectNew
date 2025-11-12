@@ -10,16 +10,19 @@ public class CekInputDetection : MonoBehaviour
 
     public GameObject _nampanKotak;
 
-    public int posisiX = 0;
+    float kecepatan = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        float moveX = 0f;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Tombol Spasi dipencet");
@@ -64,17 +67,19 @@ public class CekInputDetection : MonoBehaviour
             _spriteRenderer.color = acak;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             Debug.Log("Tombol panah kiri dipencet");
-            _nampanKotak.transform.Translate(posisiX, 0, 0);
-            posisiX++;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+            moveX = -1f;
+        } else if (Input.GetKey(KeyCode.RightArrow))
         {
             Debug.Log("Tombol panah kanan dipencet");
-            
+            moveX = 1f;
+        }
+        
+        if (moveX != 0)
+        {
+            _nampanKotak.transform.Translate(moveX * kecepatan * Time.deltaTime, 0, 0);
         }
 
         
