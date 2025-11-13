@@ -12,6 +12,8 @@ public class Square : MonoBehaviour
     public int score = 0;
 
     public int nyawa = 10;
+
+    public GameButton gameButton;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,8 +62,8 @@ public class Square : MonoBehaviour
             {
                 arahGerak = ArahGerak.kanan;
             }
-            score++;
-            Debug.Log("Score = " + score);
+            gameButton.angkaSkor++;
+            TambahScore();
         }
         if (collision.gameObject.CompareTag("Bola"))
         {
@@ -72,8 +74,12 @@ public class Square : MonoBehaviour
             {
                 SceneManager.LoadScene("Day3GameOver");
             }
-
         }
+    }
+
+    public void TambahScore()
+    {
+        gameButton.score.text = "Score : " + gameButton.angkaSkor.ToString();
     }
 }
 

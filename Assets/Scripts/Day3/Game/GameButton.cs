@@ -7,6 +7,8 @@ public class GameButton : MonoBehaviour
 
     public TMP_Text score;
 
+    public int angkaSkor;
+
     public TMP_Text nyawa;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +19,7 @@ public class GameButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score : "+square.score;
+        // score.text = "Score : "+square.score;
         nyawa.text = "Nyawa : "+square.nyawa;
     }
 
